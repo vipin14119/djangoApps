@@ -1,0 +1,17 @@
+<html>
+<head>
+</head>
+<title>Register applications </title>
+    <body>
+        {% if NameList %}
+        <ul>
+            {% for names in NameList %}
+                <li><a href="{% url 'register:detail' names.id %}">{{names.name}}</a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <p>No names available </p>
+        {% endif %}
+        <h3><a href="{% url 'register:new'%}">Register new user</a></h3>
+    </body>
+</html>
