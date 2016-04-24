@@ -7,8 +7,10 @@ class Movie(models.Model):
     title=models.CharField(max_length=200)
     comment=models.CharField(max_length=200)
     rating=models.IntegerField(default=0)
+
     def __unicode__(self):
         return self.title
+
 
 class Extended(models.Model):
     heading=models.ForeignKey(Movie)
